@@ -7,7 +7,7 @@
     <style>
         :root {
             --bg-color: #f0f2f5;
-            --card-bg: #ffffff;
+            --card-bg: #fbfff9;
             --primary-text: #1a1a1a;
             --secondary-text: #666;
             --rocket-blue: #007aff;
@@ -97,6 +97,11 @@
             height: 80px;
             transition: transform 0.1s;
         }
+          /*마우스오버*/
+        .card:hover {
+             border: 2px solid #000; /* 검정색으로 아주 진하게 */
+          /* 또는 */
+}
 
         .card:active { transform: scale(0.98); background: #fafafa; }
 
@@ -126,15 +131,35 @@
             justify-content: center;
         }
 
-        .title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+.title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    
+    /* 기본 상태: 말줄임표 처리 */
+    white-space: nowrap;      /* 한 줄로 고정 */
+    overflow: hidden;         /* 넘치는 부분 숨김 */
+    text-overflow: ellipsis;  /* ... 표시 */
+    display: block;           /* 박스 모델 변경 */
+}
+
+.title:hover {
+    text-overflow: clip;      /* 말줄임표 제거 */
+    overflow: visible;
+    display: inline-block;    /* 애니메이션을 위해 인라인 블록으로 변경 */
+    animation: marquee 5s linear infinite; /* 5초 동안 무한 반복 */
+    
+    /* 배경 설정 추가 */
+    background-color: rgba(198, 255, 205, 0.3); 
+    color: #000000;                          
+    padding: 2px 8px;                     /* 배경에 약간의 여백 추가 */
+    border-radius: 4px;                   /* 배경 모서리 둥글게 */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
 .fixed-header {
     position: sticky;
     top: 0;
@@ -181,8 +206,8 @@
 .floating-inquiry {
     position: fixed;
     bottom: 25px; /* 하단 여백 */
-    right: 20px;  /* 우측 여백 */
-    background-color: #ffffff;
+    right: 17px;  /* 우측 여백 */
+    background-color: #f5fef8;
     border: 1px solid #eee;
     border-radius: 15px;
     padding: 10px 12px;
@@ -207,8 +232,8 @@
 }
 
 .floating-inquiry img {
-    width: 70px;   /* 이미지 크기 조절 */
-    height: 70px;
+    width: 50px;   /* 이미지 크기 조절 */
+    height: 50px;
     object-fit: contain;
 }
 /* 1. 전광판 배경 꽉 차게 */
@@ -257,7 +282,7 @@
 <div class="fixed-header">
     <div class="scrolling-ticker">
         <div class="ticker-content">
-            📢 쿠팡 파트너스 활동의 일환으로 소정의 수수료를 제공받을 수 있습니다. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🚀 로켓배송 상품은 당일 배송이 가능합니다!
+            📢 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🚀 로켓배송 상품은 당일 배송이 가능합니다!
         </div>
     </div>
 
