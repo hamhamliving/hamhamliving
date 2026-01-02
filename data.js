@@ -4,7 +4,7 @@ const productData = [
         "title": "주토피아 주디 닉 보온보냉 텀블러",
         "imageUrl": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/0cf7/8c01352a394bfe8437d89de87dc9a222d816add2fd5367fca4d0ac81706e.jpg",
         "link": "https://link.coupang.com/a/dkgmZR",
-        "isRocket": true
+        "isRocket": false
     },
     {
         "id": "003",
@@ -31,4 +31,5 @@ const productData = [
     
 
 ];
+
 
